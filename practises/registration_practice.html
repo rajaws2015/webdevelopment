@@ -5,9 +5,14 @@
  function validateOnfocusOut()
 {
 	var firstName=document.getElementById("txtName").value;
+	document.getElementById("txtName").value=document.getElementById("txtName").value.toUpperCase();
+
 	var lastName=document.getElementById("txtLstName").value;
-	var fullName=firstName+lastName;
+	lastName=document.getElementById("txtLstName").value=lastName=document.getElementById("txtLstName").value.toUpperCase();
+
+	var fullName=firstName+" "+lastName;
 	document.getElementById("txtFullName").value=fullName;
+	
 }
 
 
@@ -80,7 +85,7 @@
 
 <tr>
 <td>First Name</td>
-<td><input type="text" id="txtName"></td>
+<td><input type="text" id="txtName" onfocusout="validateOnfocusOut()"></td>
 </tr>
 
 <tr>
