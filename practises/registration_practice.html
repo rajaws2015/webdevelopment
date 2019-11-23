@@ -1,0 +1,137 @@
+<html>
+<head>
+<script>
+ function validateInputFields()
+{
+	window.location="registration_practice.html";
+	debugger;
+	var firstName=document.getElementById("txtName").value
+	var lastName=document.getElementById("txtLstName").value
+	var email=document.getElementById("txtEmail").value
+	var radMale=document.getElementById("radMale").checked
+	var radFemale=document.getElementById("radFemale").checked
+	var address=document.getElementById("txtAddress").value
+	var mobile=document.getElementById("txtMobile").value
+	var selState=document.getElementById("selState").value
+	
+	
+	
+
+
+	if (firstName=="")
+	{	
+		alert("enter First Name");
+	}
+	else if (lastName=="")
+	{
+		alert("enter Last Name");
+	}
+	else if (email=="")
+	{
+		alert("enter Email");
+	}
+	else if (radMale==false && radFemale==false)
+	{	
+		alert("Select Gender");
+	}
+	else if (address=="")
+	{	
+		alert("Enter Address");
+	}
+	else if (mobile=="")
+	{
+		alert("Enter Mobile number");
+	}
+	else if(selState=="")
+	{	
+		alert("select the State");
+	}
+	
+
+}
+</script>
+
+</head>
+<body>
+<table style="width:100%;height:100%" border="1">
+<tr>
+<td colspan="2" style="background-color:cyan;height:10%"><h1>Student Registration</h1></td>
+</tr>
+<tr>
+<td width="20%" style="background-color:grey">
+<a href="login_practice.html">Login</a></br>
+<a href="registration_practice.html">Registration</a>
+</td>
+<td width="80%">
+<table>
+<tr>
+<td colspan="2"><h1>Registration</h1></td>
+</tr>
+
+<tr>
+<td>First Name</td>
+<td><input type="text" id="txtName"></td>
+</tr>
+
+<tr>
+<td>Last Name</td>
+<td><input type="text" id="txtLstName"></td>
+</tr>
+<tr>
+<td>Full Name</td>
+<td><input type="text" id="txtFullName"/></td>
+</tr>
+<tr>
+<td>Email</td>
+<td><input type="text" id="txtEmail"></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+Male <input type="radio" id="radMale" name="radGender"/>
+Female <input type="radio" id="radFemale" name="radGender"/>
+</td>
+</tr>
+
+<tr>
+<td>Address</td>
+<td>
+<textarea id="txtAddress"></textarea>
+</td>
+</tr>
+
+<tr>
+<td>MobileNo</td>
+<td><input type="text" id="txtMobile"></td>
+</tr>
+
+<tr>
+<td>State</td>
+<td>
+<select id="selState">
+<option value="">-Select</option>
+<option value="TS">Telangana</option>
+<option value="AP">Andhra Pradesh</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="button" value="Register" onclick="validateInputFields()"></input>
+</td>
+</tr>
+
+</table>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" style="height:5%;background-color:cyan"></td>
+</tr>
+</table>
+</body>
+</html>

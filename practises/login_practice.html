@@ -1,0 +1,73 @@
+<html>
+<head>
+<script>
+ function validateInputFields()
+{
+	window.location="login_practice.html";
+	debugger;
+	var userName=document.getElementById("txtUser").value
+	var passWord=document.getElementById("txtPasswd").value
+
+
+	if (userName=="")
+	{
+		alert("enter your Username");
+	}
+	else if (passWord=="")
+	{
+		alert("enter your password");
+	}
+else if(userName="Admin" && passWord=="admin@123")
+{ 
+   window.location="registration_practice.html";
+}
+else
+{
+  alert("Invalid login");
+}
+
+
+}
+</script>
+</head>
+<body>
+<table style="width:100%;height:100%" border="1">
+<tr>
+<td colspan="2" style="background-color:cyan;height:10%"><h1>Student Registration</h1></td>
+</tr>
+<tr>
+<td width="20%" style="background-color:grey">
+<a href="login_practice.html">Login</a></br>
+<a href="registration_practice.html">Registration</a>
+</td>
+<td width="80%">
+<table>
+<tr>
+<td colspan="2"><h1>Login</h1></td>
+</tr>
+
+<tr>
+<td>UserName</td>
+<td><input type="text" id="txtUser"/></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="password" id="txtPasswd"/></td>
+</tr>
+
+<tr>
+<td colspan="2"><input type="submit" id="btnSubmit" value="signin" onclick="validateInputFields()"></input></td>
+
+</tr>
+
+</table>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" style="height:5%;background-color:cyan"></td>
+</tr>
+</table>
+</body>
+</html>
