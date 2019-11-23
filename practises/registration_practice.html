@@ -15,6 +15,10 @@
 	
 }
 
+ function fnonMouseOver()
+{
+	document.getElementById("txtEmail").style.borderColor="red"
+}
 
  function validateInputFields()
 {
@@ -98,7 +102,7 @@
 </tr>
 <tr>
 <td>Email</td>
-<td><input type="text" id="txtEmail"></td>
+<td><input type="text" id="txtEmail" onmouseover="fnonMouseOver()"></td>
 </tr>
 
 <tr>
