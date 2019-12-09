@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        ></script>
+        <script>
+        $(document).ready(function(){
+           debugger;
+           $("#btnsave").click(function(){
+                debugger;
+                    var name=$("#txtName").val();
+                    var phone=$("#txtPhone").val();
+                    var email=$("#txtEmail").val();
+                    var male=$("#radMale").is(":checked");
+                    var female=$("#radFemale").is(":checked");
+                    var state=$("#selState").val();
+                    var stateText=$("#selState option:selected").text();
+                    var chk=$("#terms").is(":checked");
+
+                    if(name==""){
+                        alert("Enter your name");
+                    }
+                    else if(phone==""){
+                        alert("Enter Phonenumber");
+                    }
+                    else if(email==""){
+                        alert("Enter valid email");
+                    }
+                    else if (male==false && female==false){
+                        alert("select Gender");
+                    }
+                    else if(state==""){
+                        alert("select state");
+                    }
+                   else if(chk==""){
+                       alert("select License agreement");
+                   }
+                   else{
+                       var tablerow="";
+                       tablerow=tablerow+"<tr>";
+                       tablerow=tablerow+"<td>"+name+"</td>"
+                       tablerow=tablerow+"<td>"+phone+"</td>"
+                       tablerow=tablerow+"<td>"+email+"</td>"
+                       tablerow=tablerow+"<td>"+male+"</td>"
+                       tablerow=tablerow+"<td>"+state+"</td>"
+
+                       tablerow=tablerow+"</tr>";
+                       $("#tblStudentDetails tbody").append(tablerow);
+                   }
+
+           });
+        });
+        </script>
+    </head>
+    <body>
+        <table >
+            <tr>
+                <td colspan="2"><h2>Student Registration</h2></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="txtName"></td>
+            </tr>
+
+            <tr>
+                <td>Phone Number</td>
+                <td><input type="text" id="txtPhone"></td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td><input type="text" id="txtEmail"></td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>
+                    Male <input type="radio" id="radMale" name="Gender"/>
+                    Female <input type="radio" id="radFemale" name="Gender"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>State</td>
+               <td> <select id="selState">
+                    <option value="">Select</option>
+                    <option value="AP">Andhra Pradesh</option>
+                    <option value="TS">Telangana</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+                <td>
+                <input type="checkbox" name="terms" id="terms">  I Agree Terms & Coditions
+            </td>
+  
+            </tr>
+            <tr>
+                <td><input type="submit" name="submit" id="btnsave"></td>
+            </tr>
+
+       </table>
+       <table border="1" id="tblStudentDetails">
+           <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>email</th>
+                <th>Gender</th>
+                <th>state</th>
+            </tr>
+                
+            
+           </thead>
+           <tbody>
+
+           </tbody>
+       </table>
+    </body>
+</html>
