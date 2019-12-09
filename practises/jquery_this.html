@@ -1,0 +1,140 @@
+<html>
+<head>
+ <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  ></script>
+<script>
+function RemoveRow(control)
+   {
+      $(control).closest('tr').remove();
+   }
+$(document).ready(function(){
+debugger;
+   $('#btnSave').click(function(){
+   debugger;
+     var name=$('#txtName').val();
+	 var phone=$('#txtPhone').val();
+	 var email=$('#txtEmail').val();
+	 var radmale=$('#radMale').is(":checked");
+	 var radFemale=$('#radFemale').is(":checked");
+	 var state=$('#selState').val();
+	 var stateText=$("#selState option:selected").text();
+	 var chk=$('#chk').is(":checked");
+	 if(name=="")
+	 {
+		alert("Enter Name");
+	 }
+	 else if(phone=="")
+	 {
+		alert("Enter Phone Number");
+	 }
+	 else if(email=="")
+	 {
+		alert("Enter email")
+	 }
+	 else if(radmale==false && radFemale==false)
+	 {
+		alert("Select Gender");
+	 }
+	 else if(state=="")
+	 {
+		alert("Select State");
+	 }
+	 else if(chk==false)
+	 {
+	  alert("Accept Terms and Conditions");
+	  }
+	  else
+	  {
+		var tablerow="";
+		tablerow=tablerow+"<tr>";
+		tablerow=tablerow+"<td>"+name+"</td>";
+		tablerow=tablerow+"<td>"+phone+"</td>";
+		tablerow=tablerow+"<td>"+email+"</td>";
+		tablerow=tablerow+"<td>"+radmale+"</td>";
+		tablerow=tablerow+"<td>"+state+"</td>";
+		tablerow=tablerow+"<td><input type='button' value='delete' id='btnDelete' onclick='RemoveRow(this)'/></td>"
+		tablerow=tablerow+"</tr>";
+		$('#tblStudentDetails tbody').append(tablerow);
+	  }
+   });
+   
+});
+//$(document).on("click","#btnDelete",function(){
+ //debugger;
+//$(this).closest('tr').remove();
+//})
+</script>
+</head>
+<body>
+  <table>
+	<tr>
+		<td colspan='2'><h3>Student Registration</h3></td>
+	</tr>
+	<tr>
+		<td>Name</td>
+		<td><input type="text" id="txtName"/></td>
+	</tr>
+	<tr>
+		<td>Phone Number</td>
+		<td><input type="text" id="txtPhone"/></td>
+	</tr>
+	<tr>
+		<td>Email</td>
+		<td><input type="text" id="txtEmail"/></td>
+	</tr>
+	<tr>
+		<td>Gender</td>
+		<td>
+		  Male <input type="radio" id="radMale" name="gender"/>
+		  Female <input type="radio" id="radFemale" name="gender"/>
+		</td>
+	</tr>
+	<tr>
+	   <td>State</td>
+	   <td>
+	      <select id="selState">
+		    <option value="">Select</option>
+			<option value="AP">Andhra Pradesh</option>
+			<option value="TS">Telangana</option>
+		  </select>
+	   </td>
+	</tr>
+	<tr>
+	  <td colspan="2">
+	     <input type="checkbox" id="chk"/> I Accept terms and conditions
+	  </td>
+	</tr>
+	<tr>
+	 <td colspan="2">
+	  <input type="submit" value="Submit" id="btnSave"/>
+	 </td>
+	</tr>
+  </table>
+  <table border="1" id="tblStudentDetails">
+   <thead>
+    <tr>
+	  <th>
+	    Name
+	  </th>
+	   <th>
+	    Phone
+	  </th>
+	   <th>
+	    Email
+	  </th>
+	   <th>
+	    Gender
+	  </th>
+	   <th>
+	    State
+	  </th>
+	   <th>Delete</th>
+	</tr>
+	</thead>
+	<tbody>
+	  
+	</tbody>
+  </table>
+</body>
+</html>
